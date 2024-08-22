@@ -1,4 +1,4 @@
-function arredondarDuasCasasDecimais(numero) {
+function arredondarDuasCasasDecimais(numero: number): string {
     // Multiplica o número por 100 para ter duas casas decimais na precisão
     const numeroComDuasCasasDecimais = numero * 100;
 
@@ -19,7 +19,7 @@ function roundHalfUp(value: number): string {
     return result.toFixed(decimalPlaces);
 }
   
-export function formatarParaReais(valorFloat: number) {
+export function formatarParaReais(valorFloat: number): string {
 
     // Arredonda para duas casas decimais e converte para string
     const valorFormatado = roundHalfUp(valorFloat)
@@ -37,7 +37,7 @@ export function formatarParaReais(valorFloat: number) {
     return valorEmReais;
 }
 
-export function formatarCnpj(cnpj: string) {
+export function formatarCnpj(cnpj: string): string {
     // Remove qualquer caractere não numérico
     const cnpjLimpo = cnpj.replace(/\D/g, '');
 

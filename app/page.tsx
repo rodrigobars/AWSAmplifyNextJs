@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import { Amplify } from "aws-amplify";
-import outputs from "@/amplify_outputs.json";
+//import outputs from "@/amplify_outputs.json";
 import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 import { Button } from "@nextui-org/react";
 // import { Container } from "./components/Container";
 
-Amplify.configure(outputs);
+//Amplify.configure(outputs);
 
 const client = generateClient<Schema>();
 

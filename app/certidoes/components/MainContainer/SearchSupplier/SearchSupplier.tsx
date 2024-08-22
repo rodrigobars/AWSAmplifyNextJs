@@ -36,7 +36,6 @@ interface Certidao {
 }
 
 interface SupplierSearchProps {
-    // setDataAPIBrasil: React.Dispatch<React.SetStateAction<ResponseAPIBrasil[]>>;
     setDataTCU: React.Dispatch<React.SetStateAction<ResponseTCU[]>>;
     setStarted: React.Dispatch<React.SetStateAction<boolean>>;
     setIsTCUFetching: React.Dispatch<React.SetStateAction<boolean>>;
@@ -89,23 +88,7 @@ export default function SearchSupplier( {setStarted, setIsTCUFetching, setDataTC
         setStarted(true);
         setIsTCUFetching(true);
 
-        // Resetando
-        // setDataAPIBrasil([])
         setDataTCU([])
-
-        // APIBrasil(cnpjValues)
-        //     .then((responseAPIBrasil) => {
-        //         if (responseAPIBrasil !== undefined) {
-        //             setDataAPIBrasil(responseAPIBrasil);
-        //         } else {
-        //             // Tratar o caso em que responseAPIBrasil é undefined, se necessário
-        //             console.error("Erro: responseAPIBrasil é undefined");
-        //         }
-        //     })
-        //         .catch((error) => {
-        //         // Tratar erros relacionados à APIBrasil, se necessário
-        //         console.error("Erro ao chamar a APIBrasil:", error);
-        //     });
     
         TCU(cnpjValues)
             .then((responseTCU) => {

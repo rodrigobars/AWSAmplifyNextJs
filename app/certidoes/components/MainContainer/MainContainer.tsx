@@ -7,13 +7,6 @@ import { LuDownload } from "react-icons/lu";
 import ziperPdf from './SearchSupplier/ziperPdf';
 import { Button } from '@nextui-org/react';
 
-interface ResponseAPIBrasil {
-    razao_social: string;
-    nome_fantasia: string;
-    cnpj: string;
-    uf: string | null;
-}
-  
 interface ResponseTCU {
     razaoSocial: string;
     nomeFantasia: string;
@@ -37,7 +30,6 @@ interface Certidao {
 }
 
 const MainContainer: React.FC = () => {
-    const [dataAPIBrasil, setDataAPIBrasil] = useState<ResponseAPIBrasil[]>([]);
     const [dataTCU, setDataTCU] = useState<ResponseTCU[]>([]);
     const [isTCUFetching, setIsTCUFetching] = useState<boolean>(false);
     const [started, setStarted] = useState<boolean>(false);
@@ -63,7 +55,6 @@ const MainContainer: React.FC = () => {
                     <div className='flex flex-col sm:flex-row gap-5'>
                         <div>
                             <SearchSupplier 
-                                setDataAPIBrasil={setDataAPIBrasil}
                                 setDataTCU={setDataTCU}
                                 setIsTCUFetching={setIsTCUFetching}
                                 setStarted = {setStarted}
@@ -72,7 +63,6 @@ const MainContainer: React.FC = () => {
 
                         {started && 
                             <SupplierView 
-                                dataAPIBrasil={dataAPIBrasil}
                                 dataTCU={dataTCU}
                                 isTCUFetching={isTCUFetching}
                             />}

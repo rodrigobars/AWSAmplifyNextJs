@@ -4,17 +4,9 @@ import React, { useEffect } from "react";
 import { Card, CardHeader, CardBody, Divider, Accordion, AccordionItem, Skeleton, Textarea } from "@nextui-org/react";
 import './styles.css';
 import { formatarCnpj } from '../../../../utils/Utils'
-
-// interface ResponseAPIBrasil {
-//     razao_social: string;
-//     cnpj: string;
-//   }
   
 interface SupplierViewProps {
-    dataAPIBrasil: ResponseAPIBrasil[];
     dataTCU: ResponseTCU[];
-    started: boolean;
-    isAPIBrasilFetching: boolean;
     isTCUFetching: boolean;
   }
 
@@ -44,12 +36,6 @@ export default function SupplierView({
         dataTCU,
         isTCUFetching
     }: SupplierViewProps) {
-
-    // const [n, setN] = React.useState(dataAPIBrasil.length)
-
-    // useEffect(() => {
-    //     setN(dataAPIBrasil.length)
-    // }, [dataAPIBrasil])
 
     const formataCertidao = (certidaoSituacao: string) => {
         console.log(certidaoSituacao)
