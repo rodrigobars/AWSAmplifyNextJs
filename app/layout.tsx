@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import {Providers} from "./providers";
+import ConfigureAmplify from './utils/configureAmplify';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,10 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className='dark'>
-         <body>
-            <Providers>
-                {children}
-            </Providers>
+         <body className='bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-drip-expand'>
+              <ConfigureAmplify />
+              <Providers>
+                  {children}
+              </Providers>
          </body>
     </html>
   )

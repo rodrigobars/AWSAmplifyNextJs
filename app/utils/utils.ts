@@ -1,15 +1,22 @@
-function arredondarDuasCasasDecimais(numero: number): string {
-    // Multiplica o número por 100 para ter duas casas decimais na precisão
-    const numeroComDuasCasasDecimais = numero * 100;
+import { createServerRunner } from "@aws-amplify/adapter-nextjs";
+import { getCurrentUser } from "aws-amplify/auth";
+import outputs from "@/amplify_outputs.json";
+import { cookies } from "next/headers";
 
-    // Arredonda para o inteiro mais próximo usando Math.round()
-    const numeroArredondado = Math.round(numeroComDuasCasasDecimais);
+export const { runWithAmplifyServerContext } = createServerRunner({
+    config: outputs
+})
 
-    // Divide por 100 para voltar para o formato original com duas casas decimais
-    const resultado = numeroArredondado / 100;
-
-    // Retorna o resultado formatado com duas casas decimais
-    return resultado.toFixed(0);
+export async function GetAuthCurrentUserServer() {
+    try{
+        const currentUser = await runWithAmplifyServerContext({
+            nextServerContext: { cookies },
+            operation: (context) => getCurrentUser(context)
+        })
+        return currentUser
+    }catch(err){
+        console.log(err)
+    }
 }
 
 function roundHalfUp(value: number): string {

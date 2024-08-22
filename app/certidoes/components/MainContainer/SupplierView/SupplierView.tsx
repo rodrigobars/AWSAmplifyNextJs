@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { Card, CardHeader, CardBody, Divider, Accordion, AccordionItem, Skeleton, Textarea } from "@nextui-org/react";
 import './styles.css';
-import { formatarCnpj } from '../../../../utils/Utils'
+import { formatarCnpj } from '../../../../utils/utils'
   
 interface SupplierViewProps {
     dataTCU: ResponseTCU[];
