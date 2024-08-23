@@ -5,6 +5,7 @@ import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import '@aws-amplify/ui-react/styles.css'
 import { Button } from "@nextui-org/react";
+import Signout from "./components/Signout";
 // import { Container } from "./components/Container";
 
 //Amplify.configure(outputs);
@@ -38,6 +39,7 @@ export default function App() {
           <main>
             <div>
               <h1>Hello world</h1>
+              <Signout />
             </div>
           </main>
       // <Authenticator
