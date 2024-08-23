@@ -3,14 +3,11 @@
 import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
-import { Amplify } from "aws-amplify";
-import outputs from "@/amplify_outputs.json";
-import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 import { Button } from "@nextui-org/react";
 // import { Container } from "./components/Container";
 
-Amplify.configure(outputs);
+//Amplify.configure(outputs);
 
 const client = generateClient<Schema>();
 
@@ -38,19 +35,24 @@ export default function App() {
   }
 
   return (
-      <Authenticator
-        socialProviders={['google']}
-        className="absolute flex self-center w-full h-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-drip-expand">
-        {({ signOut, user }) => (
           <main>
             <div>
-              <h2>User Information:</h2>
-              <pre>{JSON.stringify(user, null, 2)}</pre>
+              <h1>Hello world</h1>
             </div>
-            <Button color="danger" onClick={signOut}>Sign out</Button>
           </main>
-        )}
-      </Authenticator>
+      // <Authenticator
+      //   socialProviders={['google']}
+      //   className="absolute flex self-center w-full h-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-drip-expand">
+      //   {({ signOut, user }) => (
+      //     <main>
+      //       <div>
+      //         <h2>User Information:</h2>
+      //         <pre>{JSON.stringify(user, null, 2)}</pre>
+      //       </div>
+      //       <Button color="danger" onClick={signOut}>Sign out</Button>
+      //     </main>
+      //   )}
+      // </Authenticator>
   );
 }
 
